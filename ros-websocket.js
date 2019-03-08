@@ -98,6 +98,7 @@ class RosWebSocket extends PolymerElement {
       this.ros.close();
     }
     this.ros = new ROSLIB.Ros({url: this.url});
+    this.ros.transportLibrary = 'workersocket';
     var that = this;
     this.ros.on('connection', function() {
       that.dispatchEvent(new CustomEvent('connection'));
