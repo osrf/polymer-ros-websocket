@@ -80,7 +80,8 @@ You can manually connect by calling `connect()`.
           this.ros.close();
         }
         this.ros = new ROSLIB.Ros({
-          url: this.url
+          url: this.url,
+          transportLibrary: 'workersocket'
         });
         var that = this;
         this.ros.on('connection', function() {
